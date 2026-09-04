@@ -1,0 +1,83 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Rich, Luxury Safari Palette */
+  --primary-color: #1b3027;      /* Deep, rich forest/safari green */
+  --secondary-color: #b8973c;    /* Sophisticated brushed gold */
+  --accent-color: #c86d33;       /* Warm terracotta sunset */
+  --text-main: #2b2b2b;          /* Softened charcoal for readable body text */
+  --text-muted: #666666;         /* Secondary muted text */
+  --bg-light: #f7f5f0;           /* Warm, premium off-white/linen background */
+  --white: #ffffff;
+  --border-color: #e2ded4;       /* Subtle luxury borders */
+  
+  /* Upgraded Editorial Typography */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Layout constraints */
+  --max-width: 1280px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--bg-light);
+  line-height: 1.75;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings Upgrade - Editorial & High-End */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.75rem; }
+h3 { font-size: 1.75rem; }
+
+/* Links & Lists */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Professional Images & Media */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Standardized Button Base Styles */
+button, .btn-primary, .btn-secondary {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition-smooth);
+}

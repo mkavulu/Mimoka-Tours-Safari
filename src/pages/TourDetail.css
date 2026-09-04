@@ -1,0 +1,115 @@
+/* src/pages/TourDetail.css */
+.detail-hero {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 10%;
+  color: var(--white);
+}
+
+.detail-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.detail-hero-content .badge {
+  background-color: var(--secondary-color);
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.detail-hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.price-tag {
+  font-size: 1.1rem;
+}
+
+.detail-body {
+  padding: 60px 10%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.detail-main h2 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.itinerary-heading {
+  margin-top: 40px;
+}
+
+.itinerary-item {
+  display: flex;
+  gap: 20px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.day-badge {
+  background-color: var(--primary-color);
+  color: var(--white);
+  height: fit-content;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.itinerary-item h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.booking-box {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--secondary-color);
+}
+
+.booking-box h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.booking-box p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.btn-book {
+  display: block;
+  background-color: var(--accent-color);
+  color: var(--white);
+  text-align: center;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}

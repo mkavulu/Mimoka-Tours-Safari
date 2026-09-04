@@ -1,0 +1,82 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(27, 48, 39, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+.nav-logo a {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.02em;
+}
+
+.nav-logo span {
+  color: var(--secondary-color);
+  font-style: italic; /* Gives a subtle boutique safari feel */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Standard Link Styling with Smooth Underline Hover */
+.nav-links a:not(.nav-cta) {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+.nav-links a:not(.nav-cta):hover {
+  color: var(--primary-color);
+}
+
+/* Premium Luxury CTA Button */
+.nav-cta {
+  background-color: var(--accent-color) !important;
+  color: var(--white) !important;
+  padding: 11px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(200, 109, 51, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.nav-cta:hover {
+  background-color: #b05c26 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(200, 109, 51, 0.35);
+}

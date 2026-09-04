@@ -1,0 +1,60 @@
+/* src/pages/About.css */
+
+.about-page {
+  background-color: var(--bg-light);
+  min-height: 80vh;
+}
+
+/* Clean, Light-Themed Page Header */
+.about-page .page-header {
+  background-color: var(--bg-light);
+  text-align: center;
+  padding: 80px 5% 40px 5%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-page .page-header h1 {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.about-page .page-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* About Content Layout Container */
+.about-content {
+  padding: 60px 15% 100px 15%;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+/* Card Styling for Content Body */
+.about-text {
+  background: var(--white);
+  padding: 50px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(27, 48, 39, 0.03);
+}
+
+.about-text h2 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
