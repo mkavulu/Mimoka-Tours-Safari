@@ -1,13 +1,16 @@
 /* src/components/ImageSlider.css */
+
+.image-slider-container,
 .slider-container {
   position: relative;
   width: 100%;
-  height: 450px; /* Slightly taller for a more cinematic luxury feel */
+  max-width: 100%;       /* Full width occupancy */
+  height: 550px;         /* Cinematic luxury layout height */
+  margin: 40px auto;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(27, 48, 39, 0.08);
-  border: 1px solid var(--border-color);
-  margin: 40px 0;
+  border: 1px solid var(--border-color, transparent);
 }
 
 .slider-track {
@@ -18,26 +21,27 @@
 }
 
 .slide {
-  min-width: 100%; /* Forces each slide to take up precisely 100% of container width */
+  min-width: 100%;
   width: 100%;
   height: 100%;
-  flex-shrink: 0;  /* Crucial for keeping slides from squishing */
+  flex-shrink: 0;        /* Prevents slides from squishing during transitions */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image fills the frame cleanly without distortion */
-  object-position: center; /* Centers the focal point of your safari photos */
+  object-fit: cover;     /* Fills the container completely and removes side gaps */
+  object-position: center;
   display: block;
 }
 
+/* Arrow Navigation Button Styles */
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(27, 48, 39, 0.6); /* Tinted with your deep primary green */
-  color: var(--white);
+  color: var(--white, #ffffff);
   border: none;
   width: 45px;
   height: 45px;
@@ -46,37 +50,23 @@
   justify-content: center;
   cursor: pointer;
   font-size: 1.2rem;
-  border-radius: 50%; /* Modern circular button design */
-  transition: var(--transition-smooth);
-  backdrop-filter: blur(4px); /* Adds a high-end frosted glass effect */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px); /* High-end frosted glass effect */
   z-index: 10;
 }
 
 .slider-btn:hover {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color, #1b3027);
   transform: translateY(-50%) scale(1.05);
 }
 
+.slider-btn.prev,
 .prev {
   left: 20px;
 }
 
+.slider-btn.next,
 .next {
   right: 20px;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Shows the full, uncropped image */
-  object-position: center;
-  display: block;
-  background-color: #000; /* Optional: adds a clean background for any empty side areas */
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Keeps the full, uncropped photo visible */
-  object-position: center;
-  display: block;
-  background-color: #fdfbf7; /* Warm luxury cream color instead of black */
 }

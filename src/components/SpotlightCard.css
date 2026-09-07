@@ -1,0 +1,29 @@
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.spotlight-overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(184, 151, 60, 0.12),
+    transparent 40%
+  );
+  opacity: var(--opacity);
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.spotlight-content {
+  position: relative;
+  z-index: 2;
+}

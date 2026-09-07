@@ -1,4 +1,11 @@
-/* src/pages/Home.css */
+/* =========================================
+   Home Page Styles
+   ========================================= */
+
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 /* Hero Section */
 .hero-section {
@@ -49,6 +56,7 @@
   background-color: var(--secondary-color);
   color: var(--white);
   box-shadow: 0 4px 15px rgba(184, 151, 60, 0.25);
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -61,6 +69,7 @@
   background-color: transparent;
   border: 2px solid var(--white);
   color: var(--white);
+  text-decoration: none;
 }
 
 .btn-secondary:hover {
@@ -69,7 +78,9 @@
   transform: translateY(-2px);
 }
 
-/* Featured Regions Section */
+/* =========================================
+   Featured Regions / 6-Card Destination Grid
+   ========================================= */
 .regions-section {
   padding: 100px 8%;
   text-align: center;
@@ -85,12 +96,89 @@
 
 .regions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   margin-top: 50px;
 }
 
-/* Region Card Polish with Luxury Hover Effects */
+/* Mufasa Card Style Overlays (Fixes text visibility) */
+.mufasa-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 320px;
+  display: block;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(27, 48, 39, 0.08);
+  border: 1px solid var(--border-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mufasa-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(27, 48, 39, 0.15);
+}
+
+.mufasa-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mufasa-card:hover img {
+  transform: scale(1.08); /* Smooth zoom effect on hover */
+}
+
+/* Enhanced Gradient Overlay for High Text Contrast */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(15, 28, 22, 0.25) 0%, 
+    rgba(15, 28, 22, 0.75) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  transition: background 0.3s ease;
+}
+
+.mufasa-card:hover .card-overlay {
+  background: linear-gradient(
+    to bottom, 
+    rgba(15, 28, 22, 0.35) 0%, 
+    rgba(15, 28, 22, 0.85) 100%
+  );
+}
+
+.card-line {
+  width: 45px;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.card-overlay h3 {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* Legacy support style in case standard cards are used elsewhere */
 .region-card {
   background: var(--white);
   border-radius: 8px;
@@ -101,49 +189,124 @@
   transition: var(--transition-smooth);
 }
 
-.region-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(27, 48, 39, 0.08);
-}
-
-.region-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.region-card:hover img {
-  transform: scale(1.05); /* Smooth image zoom on card hover */
-}
-
-.region-card h3, .region-card p, .region-card a {
-  padding: 0 25px;
-}
-
-.region-card h3 {
-  margin-top: 25px;
-  font-family: var(--font-heading);
-  font-size: 1.9rem;
-  color: var(--primary-color);
-}
-
-.region-card p {
-  margin: 12px 0 25px 0;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
 .link-arrow {
   display: inline-block;
   color: var(--accent-color);
   font-weight: 600;
   margin-bottom: 25px;
   transition: var(--transition-smooth);
+  text-decoration: none;
 }
 
 .link-arrow:hover {
   color: var(--primary-color);
-  transform: translateX(6px); /* Interactive subtle slide effect on arrow link */
+  transform: translateX(6px);
+}
+
+/* =========================================
+   Responsive Media Queries
+   ========================================= */
+
+@media screen and (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .regions-section {
+    padding: 80px 5%;
+  }
+
+  .regions-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .regions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .pricing-info-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+    padding: 0 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+
+  .regions-section {
+    padding: 60px 5%;
+  }
+
+  .regions-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .regions-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pricing-info-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+/* Floating & Glowing Destination Cards */
+.mufasa-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 320px;
+  display: block;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(27, 48, 39, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.mufasa-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--secondary-color, #b8973c);
+  box-shadow: 0 20px 45px rgba(184, 151, 60, 0.25), 0 0 15px rgba(184, 151, 60, 0.15);
+}
+
+.mufasa-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mufasa-card:hover img {
+  transform: scale(1.08);
 }

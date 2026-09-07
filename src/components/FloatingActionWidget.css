@@ -1,0 +1,118 @@
+/* FloatingActionWidget.css */
+.floating-widget-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: inherit;
+}
+
+/* Main Toggle Button & Label badge */
+.widget-toggle-btn {
+  background-color: #8b1e1e; /* Deep red matching your theme */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.widget-toggle-btn:hover {
+  background-color: #701717;
+}
+
+.chat-bubble-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.request-badge-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.close-icon {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+/* Hidden options list by default */
+.widget-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+/* Show options when container has .open class */
+.floating-widget-container.open .widget-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.widget-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+/* Labels appearing next to buttons */
+.widget-label {
+  background-color: #1b3027; /* Dark green card background */
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+
+/* Circular Option Buttons */
+.widget-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.widget-btn:hover {
+  transform: scale(1.1);
+}
+
+.quote-btn {
+  background-color: #1a237e; /* Dark navy */
+}
+
+.whatsapp-btn {
+  background-color: #25d366; /* WhatsApp green */
+}
+
+.call-btn {
+  background-color: #1976d2; /* Blue */
+}

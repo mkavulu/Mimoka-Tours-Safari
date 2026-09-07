@@ -1,0 +1,14 @@
+.blur-text span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+  transition-delay: calc(var(--word-index) * 0.08s);
+}
+
+.blur-text.animate span {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}

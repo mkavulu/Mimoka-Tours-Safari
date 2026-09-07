@@ -81,3 +81,55 @@ button, .btn-primary, .btn-secondary {
   outline: none;
   transition: var(--transition-smooth);
 }
+
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES (TABLETS & MOBILES)
+   ========================================== */
+
+/* Tablet Screens (Max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 1rem;
+  }
+
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* Mobile Devices & Small Tablets (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Fluid typography scaling for mobile */
+  h1 { 
+    font-size: 2.2rem; 
+    line-height: 1.25;
+  }
+  h2 { 
+    font-size: 1.8rem; 
+  }
+  h3 { 
+    font-size: 1.35rem; 
+  }
+
+  /* Adjust standard spacing containers on mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Small Mobile Phones (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+  h1 { 
+    font-size: 1.85rem; 
+  }
+  h2 { 
+    font-size: 1.5rem; 
+  }
+}

@@ -1,29 +1,31 @@
 /* src/pages/About.css */
 
 .about-page {
+  width: 100%;
   background-color: var(--bg-light);
   min-height: 80vh;
 }
 
-/* Clean, Light-Themed Page Header */
+/* Page Header - Clean light theme with an optional high-end touch */
 .about-page .page-header {
-  background-color: var(--bg-light);
+  background: linear-gradient(rgba(27, 48, 39, 0.75), rgba(27, 48, 39, 0.75)), url('../assets/kenya.jpg') center/cover no-repeat;
   text-align: center;
-  padding: 80px 5% 40px 5%;
+  padding: 100px 20px;
+  color: var(--white, #ffffff);
   border-bottom: 1px solid var(--border-color);
 }
 
 .about-page .page-header h1 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, serif);
   font-size: 3.2rem;
-  color: var(--primary-color);
-  margin-bottom: 12px;
+  color: var(--white, #ffffff);
+  margin-bottom: 15px;
   letter-spacing: 0.02em;
 }
 
 .about-page .page-header p {
-  color: var(--text-muted);
-  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
   font-weight: 400;
   max-width: 600px;
   margin: 0 auto;
@@ -31,22 +33,21 @@
 
 /* About Content Layout Container */
 .about-content {
-  padding: 60px 15% 100px 15%;
+  padding: 80px 8%;
   background: var(--bg-light);
-  text-align: center;
 }
 
 /* Card Styling for Content Body */
 .about-text {
   background: var(--white);
   padding: 50px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
   box-shadow: 0 10px 30px rgba(27, 48, 39, 0.03);
 }
 
 .about-text h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, serif);
   color: var(--primary-color);
   font-size: 2.4rem;
   margin-bottom: 25px;
@@ -57,4 +58,13 @@
   font-size: 1.05rem;
   margin-bottom: 20px;
   line-height: 1.8;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .about-grid,
+  .vision-section > div,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
