@@ -310,3 +310,16 @@
 .mufasa-card:hover img {
   transform: scale(1.08);
 }
+/* Add this to your Home.css */
+@media (max-width: 768px) {
+  .big-five-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Switch to 2 columns on mobile/tablet */
+    gap: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-five-grid {
+    grid-template-columns: 1fr !important; /* Stack them fully on very small phones */
+  }
+}
