@@ -157,3 +157,32 @@ button, .btn-primary, .btn-secondary {
     font-size: 0.9rem;
   }
 }
+/* Mobile Fixes for About Us and Commitments Sections */
+@media (max-width: 768px) {
+  /* Force side-by-side grids or flex containers to stack vertically */
+  .about-container, 
+  .commitments-container, 
+  .about-grid, 
+  .commitments-grid,
+  .about-section-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px 5% !important;
+  }
+
+  /* Prevent text boxes from overflowing or cutting off */
+  .about-text, 
+  .commitments-text,
+  .about-content-box {
+    width: 100% !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Scale down large headings slightly on mobile phones */
+  h1, h2, .section-title {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
+}
