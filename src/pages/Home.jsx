@@ -6,7 +6,7 @@ import SpotlightCard from '../components/SpotlightCard';
 import './Home.css';
 
 // Import hero background image
-import heroImg from '../assets/hero.jpeg';
+import heroImg from "../assets/hero.jpeg";
 
 // Import regional images from src/assets/
 import kenyaImg from '../assets/kenya.jpg';
