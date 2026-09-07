@@ -186,3 +186,34 @@ button, .btn-primary, .btn-secondary {
     line-height: 1.3 !important;
   }
 }
+/* 1. Fix squished commitment or feature cards on mobile */
+@media (max-width: 768px) {
+  .commitments-grid,
+  .features-grid,
+  .cards-grid {
+    grid-template-columns: 1fr !important; /* Stack them into a clean single column */
+    gap: 20px !important;
+  }
+
+  /* Give the cards a comfortable viewing height on mobile phones */
+  .commitments-grid .mufasa-card,
+  .features-grid .mufasa-card,
+  .mufasa-card {
+    height: 280px !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Expand the "Who We Are" white container box to use the full mobile screen width */
+  .about-container .container,
+  .about-content-box,
+  .who-we-are-box,
+  section > div[style*="max-width"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
