@@ -202,23 +202,30 @@ export default function Destinations() {
 
   return (
     <div className="destinations-page">
-      <header className="page-header">
-        <h1>Our Safari Packages</h1>
-        <p>Hand-crafted luxury journeys across Kenya, Tanzania, Uganda, and Rwanda</p>
-      </header>
+      {/* Hero Banner with Background Photo */}
+      <div className="destinations-hero" style={{ backgroundImage: `url(${kenyaImg})` }}>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1>Our Safari Packages</h1>
+          <p>Hand-crafted luxury journeys across Kenya, Tanzania, Uganda, and Rwanda</p>
+        </div>
+      </div>
 
-      <div className="tours-grid-container">
-        {tours.map(tour => (
-          <div key={tour.id} className="tour-card">
-            <img src={tour.image} alt={tour.title} />
-            <div className="tour-info">
-              <span className="tour-region">{tour.region}</span>
-              <h3>{tour.title}</h3>
-              <p className="tour-price">From <strong>{tour.price}</strong> per person</p>
-              <Link to={`/tour/${tour.id}`} className="btn-details">View Itinerary</Link>
+      {/* Main Tour Grid Container */}
+      <div className="tours-content-container">
+        <div className="tours-grid-container">
+          {tours.map(tour => (
+            <div key={tour.id} className="tour-card">
+              <img src={tour.image} alt={tour.title} />
+              <div className="tour-info">
+                <span className="tour-region">{tour.region}</span>
+                <h3>{tour.title}</h3>
+                <p className="tour-price">From <strong>{tour.price}</strong> per person</p>
+                <Link to={`/tour/${tour.id}`} className="btn-details">View Itinerary</Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

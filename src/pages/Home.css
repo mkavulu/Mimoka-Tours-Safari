@@ -323,3 +323,71 @@
     grid-template-columns: 1fr !important; /* Stack them fully on very small phones */
   }
 }
+
+
+/* ==========================================
+   HOME PAGE MOBILE RESPONSIVE FIXES
+   ========================================== */
+@media screen and (max-width: 768px) {
+  /* Hero section adjustments */
+  .hero-section {
+    padding: 60px 1rem;
+    min-height: 70vh;
+    text-align: center;
+  }
+
+  .hero-content h1, .hero-content div {
+    font-size: 2rem !important;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Intro Overview Section */
+  .intro-overview-section {
+    padding: 40px 5% !important;
+  }
+
+  /* Regions Grid - Force 1 Column on Mobile */
+  .regions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Big Five Grid - Stack into single column or 2 columns */
+  .big-five-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .big-five-grid .mufasa-card {
+    height: 220px !important;
+  }
+
+  /* Luxury Camps Grid - Stack vertically */
+  .camps-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .camps-section .mufasa-card {
+    height: 250px !important;
+  }
+
+  /* Transparent Pricing Section - Stack columns */
+  .pricing-info-section > div {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 40px 5% !important;
+  }
+}
