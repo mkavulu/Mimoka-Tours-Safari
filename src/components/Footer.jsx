@@ -64,7 +64,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>&copy; 2026 Mimokatours and Safaris. All Rights Reserved.</p>
         <p className="footer-trust-text" style={{ fontSize: '0.85rem', color: '#aaa', marginTop: '5px' }}>
-          Secure Payments Supported (Visa, Mastercard) • Proudly East African
+    trusted by travelers worldwide for authentic safari experiences. Our commitment to excellence ensures unforgettable journeys across Africa's most iconic landscapes.
         </p>
       </div>
     </footer>
