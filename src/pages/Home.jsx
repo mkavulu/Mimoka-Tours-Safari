@@ -23,7 +23,9 @@ import elephantImg from '../assets/elephant.jpeg';
 
 // Import Camp images from src/assets/ (matching camp2.jpeg)
 import camp1Img from '../assets/camp1.jpg';
-import camp2Img from '../assets/camp2.jpeg';
+import camp2Img from '../assets/camp4.jpg';
+import camp3Img from '../assets/camp3.jpeg';
+import camp4Img from '../assets/camp5.jpg';
 
 export default function Home() {
   return (
@@ -252,7 +254,11 @@ export default function Home() {
             rwandaImg,
             lionImg,
             elephantImg,
-            camp1Img
+            camp1Img,
+            camp2Img,
+            camp3Img,
+            camp4Img,
+
           ]} 
         />
       </section>

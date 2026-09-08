@@ -1,46 +1,74 @@
-/* src/pages/TourDetail.css */
+/* TOUR DETAIL PAGE STYLES */
+
+/* Professional Light Cream Hero Section */
 .detail-hero {
-  height: 50vh;
-  background-size: cover;
-  background-position: center;
+  /* Soft, professional light cream luxury safari gradient */
+  background: linear-gradient(135deg, #fdfbf7 0%, #f4ebd0 100%);
+  padding: 80px 10% 70px 10%;
+  color: var(--primary-color, #1b4332);
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 40px 10%;
-  color: var(--white);
+  overflow: hidden;
+  border-bottom: 2px solid rgba(212, 163, 115, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
+/* Subtle background texture pattern */
 .detail-hero::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(27, 67, 50, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
 }
 
 .detail-hero-content {
   position: relative;
   z-index: 2;
+  max-width: 900px;
 }
 
-.detail-hero-content .badge {
-  background-color: var(--secondary-color);
-  padding: 4px 12px;
-  font-size: 0.8rem;
+.detail-hero .badge {
+  display: inline-block;
+  background-color: var(--primary-color, #1b4332);
+  color: #ffffff;
   font-weight: 700;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  border-radius: 3px;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(27, 67, 50, 0.15);
 }
 
-.detail-hero-content h1 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin: 10px 0;
+.detail-hero h1 {
+  font-family: var(--font-heading, serif);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--primary-color, #1b4332);
+  line-height: 1.2;
+  margin-bottom: 16px;
 }
 
-.price-tag {
-  font-size: 1.1rem;
+.detail-hero .price-tag {
+  font-size: 1.15rem;
+  color: #4a5568;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
+.detail-hero .price-tag strong {
+  color: var(--accent-color, #c86d33);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/*DETAIL BODY & CONTENT LAYOUT */
 .detail-body {
   padding: 60px 10%;
   display: grid;
@@ -49,9 +77,15 @@
 }
 
 .detail-main h2 {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
+  font-family: var(--font-heading, serif);
+  color: var(--primary-color, #1b4332);
   margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.detail-main p {
+  line-height: 1.7;
+  color: #495057;
 }
 
 .itinerary-heading {
@@ -61,55 +95,88 @@
 .itinerary-item {
   display: flex;
   gap: 20px;
-  background: var(--white);
-  padding: 20px;
+  background: var(--white, #ffffff);
+  padding: 22px;
   border-radius: 6px;
   margin-bottom: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e9ecef;
 }
 
 .day-badge {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--primary-color, #1b4332);
+  color: var(--white, #ffffff);
   height: fit-content;
   padding: 6px 12px;
   border-radius: 4px;
   font-weight: 600;
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .itinerary-item h3 {
   font-size: 1.1rem;
-  color: var(--primary-color);
+  color: var(--primary-color, #1b4332);
   margin-bottom: 5px;
 }
 
+.itinerary-item p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* BOOKING SIDEBAR*/
 .booking-box {
-  background: var(--white);
+  background: var(--white, #ffffff);
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-  border-top: 4px solid var(--secondary-color);
+  border-top: 4px solid var(--secondary-color, #d4a373);
+  position: sticky;
+  top: 100px;
 }
 
 .booking-box h3 {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
+  font-family: var(--font-heading, serif);
+  color: var(--primary-color, #1b4332);
   margin-bottom: 10px;
+  font-size: 1.3rem;
 }
 
 .booking-box p {
   color: #666;
   margin-bottom: 20px;
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .btn-book {
   display: block;
-  background-color: var(--accent-color);
-  color: var(--white);
+  background-color: var(--accent-color, #c86d33);
+  color: var(--white, #ffffff);
   text-align: center;
   padding: 12px;
   border-radius: 4px;
   font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #b05c26;
+}
+
+/* RESPONSIVE: TABLET & MOBILE VIEWS*/
+@media screen and (max-width: 992px) {
+  .detail-body {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+  }
+  .detail-hero {
+    padding: 50px 5%;
+  }
+  .detail-hero-content h1 {
+    font-size: 2rem;
+  }
 }
