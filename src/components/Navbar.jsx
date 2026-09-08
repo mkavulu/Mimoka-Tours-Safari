@@ -98,8 +98,8 @@ export default function Navbar() {
               <div className="mega-menu-column">
                 <h4>Excursions & Extensions</h4>
                 <ul>
-                  <li onClick={() => handleExcursionClick('/excursions')}>📍 Nairobi Day Tours & Excursions</li>
-                  <li onClick={() => handleExcursionClick('/excursions')}>🏖️ Coastal Beach Extensions</li>
+                  <li onClick={() => handleExcursionClick('/excursions')}> Nairobi Day Tours & Excursions</li>
+                  <li onClick={() => handleExcursionClick('/excursions')}>Coastal Beach Extensions</li>
                 </ul>
               </div>
             </div>
