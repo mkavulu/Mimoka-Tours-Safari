@@ -15,6 +15,12 @@ export default function Navbar() {
     navigate(`/tour/${tourId}`);
   };
 
+  const handleExcursionClick = (path) => {
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+    navigate(path);
+  };
+
   const handleLanguageChange = (langCode) => {
     setCurrentLang(langCode);
     setIsMobileMenuOpen(false);
@@ -85,6 +91,15 @@ export default function Navbar() {
                   <li onClick={() => handleTourClick(2)}>7 Days Uganda Primate & Wildlife</li>
                   <li onClick={() => handleTourClick(3)}>5 Days Rwanda Gorilla Trekking</li>
                   <li onClick={() => handleTourClick(7)}>4 Days Queen Elizabeth & Bwindi Gorillas</li>
+                </ul>
+              </div>
+
+              {/* Added Excursions & Extensions Column */}
+              <div className="mega-menu-column">
+                <h4>Excursions & Extensions</h4>
+                <ul>
+                  <li onClick={() => handleExcursionClick('/excursions')}>📍 Nairobi Day Tours & Excursions</li>
+                  <li onClick={() => handleExcursionClick('/excursions')}>🏖️ Coastal Beach Extensions</li>
                 </ul>
               </div>
             </div>

@@ -1,4 +1,5 @@
 // src/App.jsx
+//import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
@@ -8,6 +9,7 @@ import Destinations from './pages/Destinations';
 import TourDetail from './pages/TourDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import DayExcursions from './components/DayExcursions';
 
 // Import the floating action widget
 import FloatingActionWidget from './components/FloatingActionWidget';
@@ -24,6 +26,7 @@ export default function App() {
         <Route path="/tour/:id" element={<TourDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/excursions" element={<DayExcursions />} />
       </Routes>
       
       <Footer />

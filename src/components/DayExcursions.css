@@ -1,0 +1,140 @@
+/* src/components/DayExcursions.css */
+.excursions-page {
+  padding-bottom: 80px;
+  background-color: #f9f6f0;
+  min-height: 100vh;
+}
+
+/* Lighter, clean background hero section */
+.excursions-hero {
+  background-color: #eae4dc; /* Soft, warm, lighter background tone */
+  color: #1b4332; /* Deep green text for high contrast and readability */
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #dcd3cc;
+}
+
+.excursions-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: var(--font-heading, serif);
+  color: #1b4332;
+}
+
+.excursions-hero p {
+  font-size: 1.1rem;
+  color: #555555; /* Neutral dark tone for subtext */
+}
+
+.excursions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.excursion-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.tab-btn {
+  background-color: #ffffff;
+  border: 2px solid #1b4332;
+  color: #1b4332;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background-color: #1b4332;
+  color: #ffffff;
+}
+
+.excursions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.excursion-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.excursion-card:hover {
+  transform: translateY(-5px);
+}
+
+.excursion-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.excursion-duration {
+  display: inline-block;
+  background-color: rgba(212, 163, 115, 0.15);
+  color: #b07d4b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.excursion-info h3 {
+  font-size: 1.25rem;
+  color: #1b4332;
+  margin-bottom: 10px;
+}
+
+.excursion-info p {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.excursion-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eeeeee;
+  padding-top: 15px;
+}
+
+.excursion-price {
+  font-weight: 700;
+  color: #1b4332;
+  font-size: 1rem;
+}
+
+.book-btn {
+  background-color: #d4a373;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.book-btn:hover {
+  background-color: #bc8a5b;
+}
