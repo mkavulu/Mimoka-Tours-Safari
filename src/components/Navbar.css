@@ -384,3 +384,42 @@
     border-radius: 6px;
   }
 }
+/* Ensure the mega menu contains all columns comfortably and is fully scrollable/visible */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  gap: 20px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Specific styling to highlight the excursions column inside the dropdown */
+.mega-menu-column.excursions-column {
+  background-color: #fcf9f4;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #d4a373;
+}
+
+/* Mobile adjustments to keep dropdown items fully accessible */
+@media (max-width: 992px) {
+  .mega-menu {
+    position: static;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    padding: 10px 0 10px 15px;
+    background: transparent;
+    max-height: none;
+  }
+}
