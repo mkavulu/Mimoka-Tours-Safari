@@ -10,7 +10,7 @@ export default function About() {
       {/* Page Header / Hero Banner */}
       <header className="page-header">
         <div className="header-overlay">
-          <h1>About Mimokatours & Safaris</h1>
+          <h1>About Mimoka Safaris</h1>
           <p>Your trusted bridge to the wild heart of East & Southern Africa</p>
         </div>
       </header>
@@ -26,7 +26,7 @@ export default function About() {
               Crafting Unforgettable African Expeditions
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '20px' }}>
-              Mimokatours and Safaris is an elite tour operator specializing in custom-curated wildlife adventures across Kenya, Tanzania, Uganda and Rwanda.
+              Mimoka Safaris is an elite tour operator specializing in custom-curated wildlife adventures across Kenya, Tanzania, Uganda and Rwanda.
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '30px' }}>
               With years of ground expertise, localized expert guides, and high-end vehicle fleets, we ensure your journey is safe, authentic, and luxurious. Whether you're tracking the Great Migration across the Mara or gorilla trekking in the misty peaks of Rwanda, we turn your dream safari into reality.
@@ -44,7 +44,7 @@ export default function About() {
       <section className="why-choose-section" style={{ background: 'var(--bg-light)', padding: '80px 8%' }}>
         <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 50px auto' }}>
           <span style={{ color: 'var(--primary-color)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>
-            The Mimokatours Difference
+            The Mimokasafaris Difference
           </span>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.4rem', color: 'var(--primary-color)', margin: '15px 0 15px 0' }}>
             Why Travel With Us
@@ -123,7 +123,7 @@ export default function About() {
               We are deeply committed to sustainable and responsible tourism. We believe that wildlife adventures should protect natural habitats, empower local communities, and leave positive impacts across every region we operate in.
             </p>
             <p style={{ color: 'var(--text-muted)', lineHeight: '1.8' }}>
-              When you book with Mimokatours, you aren't just taking a vacation—you are helping preserve Africa's magnificent heritage for generations to come.
+              When you book with Mimokasafaris, you aren't just taking a vacation—you are helping preserve Africa's magnificent heritage for generations to come.
             </p>
           </div>
         </div>

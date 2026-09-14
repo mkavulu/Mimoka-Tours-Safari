@@ -57,7 +57,7 @@ export default function Home() {
             Tour and Holiday Destinations in East Africa for Your Next Holiday
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '20px' }}>
-            Welcome to Mimokatours, where we specialize in offering the most unforgettable safari experiences across East Africa. Our goal is to help you discover the magic of Africa through our tailor-made safari tours, cultural tours, and luxury tour packages.
+            Welcome to Mimokasafaris, where we specialize in offering the most unforgettable safari experiences across East Africa. Our goal is to help you discover the magic of Africa through our tailor-made safari tours, cultural tours, and luxury tour packages.
           </p>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.8' }}>
             If you're looking for a wildlife experience like no other, our safari tours are perfect for you. Our experienced guides will take you on a journey through the savannahs and jungles, where you'll see magnificent creatures like lions, elephants, and giraffes in their natural habitat. Our 4x4 wheel drive vehicles are equipped with modern amenities to ensure you have an exceptional safari experience.

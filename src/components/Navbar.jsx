@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <Link to="/">Mimoka<span>Tours</span></Link>
+        <Link to="/">Mimoka<span>Safaris</span></Link>
       </div>
 
       {/* Mobile Menu Toggle Button */}

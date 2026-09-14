@@ -9,7 +9,7 @@ export default function Footer() {
         
         {/* Column 1: Brand Info & Newsletter */}
         <div className="footer-col">
-          <h3>Mimoka<span>Tours</span></h3>
+          <h3>Mimoka<span>Safaris</span></h3>
           <p>Your premier partner for unforgettable luxury and wildlife safaris across East and Southern Africa.</p>
           
           {/* Newsletter Form */}
@@ -46,7 +46,7 @@ export default function Footer() {
         {/* Column 4: Contact & Socials */}
         <div className="footer-col">
           <h4>Get in Touch</h4>
-          <p>Email: info@mimokatours.com</p>
+          <p>Email: info@mimokasafariskenya.com</p>
           <p>Phone: +254 710 165 356</p>
           <p>Nairobi, Kenya</p>
 
@@ -62,7 +62,7 @@ export default function Footer() {
 
       {/* Footer Bottom with Copyright & Trust Elements */}
       <div className="footer-bottom">
-        <p>&copy; 2026 Mimokatours and Safaris. All Rights Reserved.</p>
+        <p>&copy; 2026 Mimokatours Safaris. All Rights Reserved.</p>
         <p className="footer-trust-text" style={{ fontSize: '0.85rem', color: '#aaa', marginTop: '5px' }}>
     trusted by travelers worldwide for authentic safari experiences. Our commitment to excellence ensures unforgettable journeys across Africa's most iconic landscapes.
         </p>
