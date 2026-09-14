@@ -402,13 +402,13 @@
   z-index: 1000;
 }
 
-/* Specific styling to highlight the excursions column inside the dropdown */
+/* Specific styling to highlight the excursions column inside the dropdown 
 .mega-menu-column.excursions-column {
   background-color: #fcf9f4;
   padding: 10px;
   border-radius: 6px;
   border-left: 3px solid #d4a373;
-}
+}*/
 
 /* Mobile adjustments to keep dropdown items fully accessible */
 @media (max-width: 992px) {

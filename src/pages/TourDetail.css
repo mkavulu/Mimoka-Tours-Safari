@@ -51,24 +51,10 @@
   font-weight: 700;
   color: var(--primary-color, #1b4332);
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 0; /* Adjusted since price-tag below it was removed */
 }
 
-.detail-hero .price-tag {
-  font-size: 1.15rem;
-  color: #4a5568;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.detail-hero .price-tag strong {
-  color: var(--accent-color, #c86d33);
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-left: 6px;
-}
-
-/*DETAIL BODY & CONTENT LAYOUT */
+/* DETAIL BODY & CONTENT LAYOUT */
 .detail-body {
   padding: 60px 10%;
   display: grid;
@@ -126,7 +112,7 @@
   margin: 0;
 }
 
-/* BOOKING SIDEBAR*/
+/* BOOKING SIDEBAR */
 .booking-box {
   background: var(--white, #ffffff);
   padding: 30px;
@@ -167,7 +153,7 @@
   background-color: #b05c26;
 }
 
-/* RESPONSIVE: TABLET & MOBILE VIEWS*/
+/* RESPONSIVE: TABLET & MOBILE VIEWS */
 @media screen and (max-width: 992px) {
   .detail-body {
     grid-template-columns: 1fr;

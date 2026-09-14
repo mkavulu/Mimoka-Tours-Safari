@@ -4,7 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import './DayExcursions.css';
 
 // Import your local asset image here (adjust path if your folder structure differs)
-import coastImage from '../assets/coast.jpg';
+import coastImage from '../assets/nationalpark.jpeg';
+import sheldrickimage from '../assets/sheldrick.jpeg';
+import nairobiimage from '../assets/Nairobi-National-Museum.jpg';
+import zanzibarImage from '../assets/zanzibar-bay-resort.jpg';
+import coast1Image from '../assets/voyager.jpg';
+import coast2Image from '../assets/Diani.jpeg';
+
 
 export default function DayExcursions() {
   const [activeTab, setActiveTab] = useState('nairobi');
@@ -25,7 +31,7 @@ export default function DayExcursions() {
       duration: 'Half Day (Morning)',
       highlights: 'Get up close with baby elephants and feed Rothschild giraffes.',
       price: '$95 per person',
-      image: coastImage,
+      image: sheldrickimage,
     },
     {
       id: 'nnp-3',
@@ -33,7 +39,7 @@ export default function DayExcursions() {
       duration: 'Full Day',
       highlights: 'Explore Kenyan history, culture, and vibrant downtown markets.',
       price: '$80 per person',
-      image: coastImage,
+      image: nairobiimage,
     }
   ];
 
@@ -44,7 +50,7 @@ export default function DayExcursions() {
       duration: '3 Days / 2 Nights',
       highlights: 'Relax on white sandy beaches, crystal-clear waters, and optional snorkeling.',
       price: 'From $350 per person',
-      image: coastImage, // Utilizing your local asset here
+      image: coast2Image, // Utilizing your local asset here
     },
     {
       id: 'coast-2',
@@ -52,7 +58,7 @@ export default function DayExcursions() {
       duration: '4 Days / 3 Nights',
       highlights: 'Explore Fort Jesus, Old Town, and enjoy beachfront resort luxury.',
       price: 'From $480 per person',
-      image: coastImage,
+      image: coast1Image,
     },
     {
       id: 'coast-3',
@@ -60,7 +66,7 @@ export default function DayExcursions() {
       duration: '4 Days / 3 Nights',
       highlights: 'Stone Town walking tour, spice farm visit, and Nungwi beach relaxation.',
       price: 'From $550 per person',
-      image: coastImage,
+      image: zanzibarImage,
     }
   ];
 

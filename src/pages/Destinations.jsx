@@ -1,5 +1,5 @@
 // src/pages/Destinations.jsx
-import React from 'react';
+//import React from 'react';
 import { Link } from 'react-router-dom';
 import './Destinations.css';
 
@@ -19,7 +19,6 @@ export default function Destinations() {
       id: 1, 
       title: "8 Days Kenya & Tanzania Migration Safari", 
       region: "Kenya & Tanzania", 
-      price: "$2,850", 
       image: kenyaImg,
       itinerary: [
         "Day 1: Arrival in Nairobi - Transfer to hotel for briefing.",
@@ -36,7 +35,6 @@ export default function Destinations() {
       id: 2, 
       title: "7 Days Uganda Primate & Wildlife Discovery", 
       region: "Uganda", 
-      price: "$2,450", 
       image: ugandaImg,
       itinerary: [
         "Day 1: Arrival at Entebbe International Airport - Transfer to Kampala.",
@@ -52,7 +50,6 @@ export default function Destinations() {
       id: 3, 
       title: "5 Days Rwanda Gorilla Trekking & Culture", 
       region: "Rwanda", 
-      price: "$3,100", 
       image: rwandaImg,
       itinerary: [
         "Day 1: Arrival in Kigali - City tour including the Genocide Memorial Centre.",
@@ -66,7 +63,6 @@ export default function Destinations() {
       id: 4, 
       title: "10 Days Complete East Africa Grand Tour", 
       region: "Multi-Country", 
-      price: "$4,200", 
       image: tanzaniaImg,
       itinerary: [
         "Day 1: Arrival in Nairobi, Kenya.",
@@ -85,7 +81,6 @@ export default function Destinations() {
       id: 5, 
       title: "6 Days Classic Kenya Wildlife Safari", 
       region: "Kenya", 
-      price: "$1,950", 
       image: lionImg,
       itinerary: [
         "Day 1: Nairobi to Amboseli National Park - View of Mt. Kilimanjaro.",
@@ -100,7 +95,6 @@ export default function Destinations() {
       id: 6, 
       title: "5 Days Tanzania Northern Circuit Express", 
       region: "Tanzania", 
-      price: "$2,100", 
       image: elephantImg,
       itinerary: [
         "Day 1: Arusha to Tarangire National Park - Giant baobab trees and elephants.",
@@ -114,7 +108,6 @@ export default function Destinations() {
       id: 7, 
       title: "4 Days Queen Elizabeth & Bwindi Gorillas", 
       region: "Uganda", 
-      price: "$1,650", 
       image: camp1Img,
       itinerary: [
         "Day 1: Entebbe to Queen Elizabeth National Park.",
@@ -127,7 +120,6 @@ export default function Destinations() {
       id: 8, 
       title: "4 Days Akagera & Volcanoes Rwanda Adventure", 
       region: "Rwanda", 
-      price: "$2,300", 
       image: camp2Img,
       itinerary: [
         "Day 1: Kigali to Akagera National Park - Afternoon boat safari on Lake Ihema.",
@@ -140,7 +132,6 @@ export default function Destinations() {
       id: 9, 
       title: "9 Days Ultimate Kenya Scenic & Photographic Safari", 
       region: "Kenya", 
-      price: "$3,400", 
       image: kenyaImg,
       itinerary: [
         "Day 1: Nairobi arrival and overnight hotel stay.",
@@ -158,7 +149,6 @@ export default function Destinations() {
       id: 10, 
       title: "8 Days Tanzania Migration & Zanzibar Beach Holiday", 
       region: "Tanzania", 
-      price: "$3,200", 
       image: tanzaniaImg,
       itinerary: [
         "Day 1: Arusha to Lake Manyara National Park.",
@@ -175,7 +165,6 @@ export default function Destinations() {
       id: 11, 
       title: "6 Days Uganda Source of the Nile & Wildlife", 
       region: "Uganda", 
-      price: "$1,850", 
       image: ugandaImg,
       itinerary: [
         "Day 1: Arrival in Entebbe - Jinja source of the Nile tour.",
@@ -190,12 +179,51 @@ export default function Destinations() {
       id: 12, 
       title: "3 Days Rwanda Express Gorilla Trek", 
       region: "Rwanda", 
-      price: "$1,950", 
       image: rwandaImg,
       itinerary: [
         "Day 1: Arrival in Kigali International Airport - Scenic drive to Volcanoes National Park.",
         "Day 2: Volcanoes National Park - Mountain Gorilla Trekking adventure in the misty bamboo forests.",
         "Day 3: Iby'Iwacu Cultural Village visit, return to Kigali for departure."
+      ]
+    },
+    { 
+      id: 13, 
+      title: "4 Days Samburu Special Wildlife Explorer", 
+      region: "Kenya", 
+      image: lionImg,
+      itinerary: [
+        "Day 1: Nairobi to Samburu National Reserve - Scenic drive north across the equator with afternoon game drive.",
+        "Day 2: Samburu National Reserve - Full day game viewing searching for the 'Samburu Special Five' (Grevy's zebra, Somali ostrich, reticulated giraffe, gerenuk, and beisa oryx).",
+        "Day 3: Samburu & Buffalo Springs - Morning and afternoon game drives along the Ewaso Ng'iro River.",
+        "Day 4: Samburu National Reserve back to Nairobi for departure."
+      ]
+    },
+    { 
+      id: 14, 
+      title: "5 Days Tsavo East & West Wilderness Adventure", 
+      region: "Kenya", 
+      image: elephantImg,
+      itinerary: [
+        "Day 1: Nairobi to Tsavo East National Park - Famous for the vast red elephants and Yatta Plateau.",
+        "Day 2: Tsavo East to Tsavo West National Park - Visit Mzima Springs to view underwater hippos and crocodiles.",
+        "Day 3: Tsavo West National Park - Game drive exploring the Shetani Lava Flow and Rhino Sanctuary.",
+        "Day 4: Tsavo West to Amboseli National Park - Spectacular afternoon views of Mount Kilimanjaro.",
+        "Day 5: Amboseli National Park morning game drive, then return to Nairobi."
+      ]
+    },
+    { 
+      id: 15, 
+      title: "7 Days Ultimate Kenya Northern & Southern Circuit (Samburu & Tsavo)", 
+      region: "Kenya", 
+      image: kenyaImg,
+      itinerary: [
+        "Day 1: Arrival in Nairobi - Hotel check-in and safari briefing.",
+        "Day 2: Nairobi to Samburu National Reserve - Afternoon game drive along the riverbanks.",
+        "Day 3: Samburu National Reserve - Full day exploring northern arid landscapes and unique wildlife.",
+        "Day 4: Samburu back to Nairobi, then transfer south toward Tsavo East.",
+        "Day 5: Tsavo East National Park - Full day game drives tracking lions and red dust elephants.",
+        "Day 6: Tsavo East to Tsavo West - Visit Mzima Springs and Roaring Rocks.",
+        "Day 7: Tsavo West back to Nairobi for your outbound flight."
       ]
     }
   ];
@@ -220,7 +248,6 @@ export default function Destinations() {
               <div className="tour-info">
                 <span className="tour-region">{tour.region}</span>
                 <h3>{tour.title}</h3>
-                <p className="tour-price">From <strong>{tour.price}</strong> per person</p>
                 <Link to={`/tour/${tour.id}`} className="btn-details">View Itinerary</Link>
               </div>
             </div>
