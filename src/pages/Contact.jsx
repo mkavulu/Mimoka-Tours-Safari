@@ -64,12 +64,8 @@ export default function Contact() {
     country.code.includes(searchQuery)
   );
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const fullPhoneNumber = `${selectedCountry.code} ${formData.phone}`;
-    console.log("Submitted Phone:", fullPhoneNumber);
-    alert('Thank you! Your safari quote request has been submitted. Our team will get back to you shortly.');
-  };
+  // Combines the selected country code with the typed phone number for Web3Forms
+  const fullPhoneNumber = `${selectedCountry.code} ${formData.phone}`;
 
   return (
     <div className="contact-page">
@@ -79,8 +75,17 @@ export default function Contact() {
       </header>
 
       <div className="contact-container">
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form 
+          action="https://api.web3forms.com/submit" 
+          method="POST" 
+          className="contact-form"
+        >
+          {/* Web3Forms Access Key */}
+          <input type="hidden" name="access_key" value="a6c2285c-4424-40be-b972-bfa6c0c07212" />
           
+          {/* Optional Subject Line for your incoming emails */}
+          <input type="hidden" name="subject" value="New Safari Quote Request - Mimoka Safaris" />
+
           <div className="form-row">
             <div className="form-group">
               <label>Full Name <span className="required-star">*</span></label>
@@ -155,6 +160,10 @@ export default function Contact() {
                   )}
                 </div>
 
+                {/* Hidden input to pass the combined full phone number to Web3Forms */}
+                <input type="hidden" name="full_phone" value={fullPhoneNumber} />
+
+                {/* Fixed input field bound directly to form state */}
                 <input 
                   type="tel" 
                   name="phone"
@@ -194,7 +203,7 @@ export default function Contact() {
               <input 
                 type="number" 
                 name="duration"
-                placeholder="e.g., 7 Days" 
+                placeholder="e.g., 7" 
                 value={formData.duration}
                 onChange={handleChange}
               />
@@ -235,7 +244,9 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button type="submit" className="btn-submit">Submit Quote Request</button>
+          <button type="submit" className="btn-submit">
+            Submit Quote Request
+          </button>
         </form>
       </div>
     </div>
