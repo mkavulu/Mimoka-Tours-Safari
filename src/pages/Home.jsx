@@ -14,14 +14,21 @@ import tanzaniaImg from '../assets/tanzania.jpg';
 import rwandaImg from '../assets/rwanda.jpg';
 import ugandaImg from '../assets/uganda.jpg';
 
-// Import Big Five images from src/assets/ (matching your .jpeg extensions)
+// Import Big Five images from src/assets/
 import lionImg from '../assets/lion.jpeg';
 import leopardImg from '../assets/leopard.jpeg';
 import buffaloImg from '../assets/buffalo.jpeg';
 import rhinoImg from '../assets/rhino.jpeg';
 import elephantImg from '../assets/elephant.jpeg';
 
-// Import Camp images from src/assets/ (matching camp2.jpeg)
+// Import Small Five images from src/assets/
+import buffaloWeaverImg from '../assets/buffalo-weaver.jpg';
+import elephantShrewImg from '../assets/elephant-shrew.jpeg';
+import leopardTortoiseImg from '../assets/leopard-tortoise.jpeg';
+import lionAntImg from '../assets/lion-ant.jpeg';
+import rhinoBeaverImg from '../assets/rhino-beaver.jpg';
+
+// Import Camp images from src/assets/
 import camp1Img from '../assets/camp1.jpg';
 import camp2Img from '../assets/camp4.jpg';
 import camp3Img from '../assets/camp3.jpeg';
@@ -188,8 +195,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Small Five of Africa Section */}
+      <section className="small-five-section" style={{ padding: '60px 5%' }}>
+        <h2 style={{ textAlign: 'center', fontFamily: 'var(--font-heading)', fontSize: '2.4rem', color: 'var(--primary-color)', marginBottom: '10px' }}>
+          The Small Five of Africa
+        </h2>
+        <div style={{ width: '50px', height: '2px', background: 'var(--primary-color)', margin: '0 auto 40px auto' }}></div>
+        
+        <div className="small-five-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
+          
+          <div className="mufasa-card" style={{ height: '260px', borderRadius: '8px', overflow: 'hidden', position: 'relative' }}>
+            <img src={buffaloWeaverImg} alt="Buffalo Weaver" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card-overlay">
+              <h3>Buffalo Weaver</h3>
+            </div>
+          </div>
+
+          <div className="mufasa-card" style={{ height: '260px', borderRadius: '8px', overflow: 'hidden', position: 'relative' }}>
+            <img src={elephantShrewImg} alt="Elephant Shrew" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card-overlay">
+              <h3>Elephant Shrew</h3>
+            </div>
+          </div>
+
+          <div className="mufasa-card" style={{ height: '260px', borderRadius: '8px', overflow: 'hidden', position: 'relative' }}>
+            <img src={leopardTortoiseImg} alt="Leopard Tortoise" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card-overlay">
+              <h3>Leopard Tortoise</h3>
+            </div>
+          </div>
+
+          <div className="mufasa-card" style={{ height: '260px', borderRadius: '8px', overflow: 'hidden', position: 'relative' }}>
+            <img src={lionAntImg} alt="Ant Lion" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card-overlay">
+              <h3>Ant Lion</h3>
+            </div>
+          </div>
+
+          <div className="mufasa-card" style={{ height: '260px', borderRadius: '8px', overflow: 'hidden', position: 'relative' }}>
+            <img src={rhinoBeaverImg} alt="Rhino Beetle" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="card-overlay">
+              <h3>Rhino Beetle</h3>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* Luxury Camps Showcase Section */}
-      <section className="camps-section" style={{ padding: '80px 5%' }}>
+      <section className="camps-section" style={{ padding: '80px 5%', background: 'var(--bg-light)' }}>
         <h2 style={{ textAlign: 'center', fontFamily: 'var(--font-heading)', fontSize: '2.4rem', color: 'var(--primary-color)', marginBottom: '40px' }}>
           Handpicked Luxury Tented Camps
         </h2>
@@ -212,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* Transparent Pricing & Budget Info Section */}
-      <section className="pricing-info-section" style={{ background: 'var(--bg-light)', padding: '80px 10%' }}>
+      <section className="pricing-info-section" style={{ padding: '80px 10%' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', alignItems: 'center' }}>
           <div>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', color: 'var(--primary-color)', marginBottom: '20px' }}>
@@ -241,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* Safari Highlights Gallery Section with Auto-Playing Slider */}
-      <section className="gallery-section" style={{ padding: '60px 5%' }}>
+      <section className="gallery-section" style={{ padding: '60px 5%', background: 'var(--bg-light)' }}>
         <h2 style={{ textAlign: 'center', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)', fontSize: '2.2rem', marginBottom: '20px' }}>
           Safari Moments & Landscapes
         </h2>
@@ -254,11 +308,12 @@ export default function Home() {
             rwandaImg,
             lionImg,
             elephantImg,
+            buffaloWeaverImg,
+            elephantShrewImg,
             camp1Img,
             camp2Img,
             camp3Img,
             camp4Img,
-
           ]} 
         />
       </section>
