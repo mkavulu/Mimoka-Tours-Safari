@@ -3,10 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Contact.css';
 
 const countries = [
-  { name: "Kenya", code: "+254" },
-  { name: "Tanzania", code: "+255" },
-  { name: "Uganda", code: "+256" },
-  { name: "Rwanda", code: "+250" },
+
   { name: "United States", code: "+1" },
   { name: "United Kingdom", code: "+44" },
   { name: "Canada", code: "+1" },
@@ -16,8 +13,6 @@ const countries = [
   { name: "France", code: "+33" },
   { name: "India", code: "+91" },
   { name: "United Arab Emirates", code: "+971" },
-  { name: "Nigeria", code: "+234" },
-  { name: "Ghana", code: "+233" },
   { name: "Italy", code: "+39" },
   { name: "Spain", code: "+34" },
   { name: "Netherlands", code: "+31" },
@@ -55,15 +50,15 @@ export default function Contact() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Simple and effective sanitization helper to strip HTML tags/scripts
+  // Strips HTML tags safely without removing spaces while typing
   const sanitizeInput = (value) => {
     if (typeof value !== 'string') return value;
-    return value.replace(/<[^>]*>?/gm, '').trim();
+    return value.replace(/<[^>]*>?/gm, '');
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Apply sanitization to text inputs as they are typed
+    // Allow natural typing and spacing while protecting against HTML injection
     const cleanedValue = (name === 'message' || name === 'fullName' || name === 'phone') 
       ? sanitizeInput(value) 
       : value;

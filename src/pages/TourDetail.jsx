@@ -12,7 +12,7 @@ export default function TourDetail() {
         return {
           title: "8 Days Kenya & Tanzania Migration Safari",
           region: "Kenya & Tanzania",
-          price: "$2,850",
+          //price: "$2,850",
           overview: "Experience breathtaking savannahs, luxury tented camps, and expert-guided game drives tracking the Great Migration across Maasai Mara and Serengeti.",
           itinerary: [
             { day: "Day 1", title: "Arrival in Nairobi", desc: "Airport pickup, hotel check-in, and comprehensive safari briefing." },
@@ -28,7 +28,7 @@ export default function TourDetail() {
         return {
           title: "7 Days Uganda Primate & Wildlife Discovery",
           region: "Uganda",
-          price: "$2,450",
+          //price: "$2,450",
           overview: "Immerse yourself in the Pearl of Africa. Track chimpanzees in Kibale and encounter mountain gorillas in Bwindi Impenetrable Forest.",
           itinerary: [
             { day: "Day 1", title: "Arrival in Entebbe/Kampala", desc: "Airport transfer and welcome dinner with local travel coordinators." },
@@ -44,7 +44,7 @@ export default function TourDetail() {
         return {
           title: "5 Days Rwanda Gorilla Trekking & Culture",
           region: "Rwanda",
-          price: "$3,100",
+          //price: "$3,100",
           overview: "Discover the Land of a Thousand Hills with luxury stays, Kigali city heritage tours, and majestic mountain gorilla tracking.",
           itinerary: [
             { day: "Day 1", title: "Arrival in Kigali", desc: "Visit the Kigali Genocide Memorial and settle into your luxury boutique hotel." },
@@ -58,7 +58,7 @@ export default function TourDetail() {
         return {
           title: "10 Days Complete East Africa Grand Tour",
           region: "Multi-Country",
-          price: "$4,200",
+          //price: "$4,200",
           overview: "The ultimate East African luxury expedition covering Kenya's Maasai Mara, Tanzania's Serengeti, and Rwanda's Volcanoes.",
           itinerary: [
             { day: "Day 1-3", title: "Kenya Wildlife Highlights", desc: "Explore Nairobi and the sweeping open plains of the Maasai Mara." },
