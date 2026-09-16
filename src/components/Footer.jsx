@@ -9,7 +9,11 @@ export default function Footer() {
         
         {/* Column 1: Brand Info & Newsletter */}
         <div className="footer-col">
-          <h3>Mimoka<span>Safaris</span></h3>
+          <h3>
+            <Link to="/" className="footer-brand-link">
+              Mimoka<span>Safaris</span>
+            </Link>
+          </h3>
           <p>Your premier partner for unforgettable luxury and wildlife safaris across East and Southern Africa.</p>
           
           {/* Newsletter Form */}
@@ -64,7 +68,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>&copy; 2026 Mimokatours Safaris. All Rights Reserved.</p>
         <p className="footer-trust-text" style={{ fontSize: '0.85rem', color: '#aaa', marginTop: '5px' }}>
-    trusted by travelers worldwide for authentic safari experiences. Our commitment to excellence ensures unforgettable journeys across Africa's most iconic landscapes.
+          Trusted by travelers worldwide for authentic safari experiences. Our commitment to excellence ensures unforgettable journeys across Africa's most iconic landscapes.
         </p>
       </div>
     </footer>
