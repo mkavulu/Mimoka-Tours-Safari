@@ -22,7 +22,7 @@ export default function DayExcursions() {
       title: 'Nairobi National Park Half-Day Game Drive',
       duration: '4-5 Hours',
       highlights: 'Spot rhinos, lions, and giraffes with the city skyline in the background.',
-      price: '$120 per person',
+      //price: '$120 per person',
       image: coastImage, // You can use coastImage or a Nairobi-specific image variable here
     },
     {
@@ -30,7 +30,7 @@ export default function DayExcursions() {
       title: 'Sheldrick Wildlife Trust & Giraffe Centre Tour',
       duration: 'Half Day (Morning)',
       highlights: 'Get up close with baby elephants and feed Rothschild giraffes.',
-      price: '$95 per person',
+      //price: '$95 per person',
       image: sheldrickimage,
     },
     {
@@ -38,7 +38,7 @@ export default function DayExcursions() {
       title: 'Nairobi National Museum & City Walking Tour',
       duration: 'Full Day',
       highlights: 'Explore Kenyan history, culture, and vibrant downtown markets.',
-      price: '$80 per person',
+      //price: '$80 per person',
       image: nairobiimage,
     }
   ];
@@ -49,7 +49,7 @@ export default function DayExcursions() {
       title: '3 Days Diani Beach Escape',
       duration: '3 Days / 2 Nights',
       highlights: 'Relax on white sandy beaches, crystal-clear waters, and optional snorkeling.',
-      price: 'From $350 per person',
+      //price: 'From $350 per person',
       image: coast2Image, // Utilizing your local asset here
     },
     {
@@ -57,7 +57,7 @@ export default function DayExcursions() {
       title: '4 Days Mombasa Heritage & Beach Getaway',
       duration: '4 Days / 3 Nights',
       highlights: 'Explore Fort Jesus, Old Town, and enjoy beachfront resort luxury.',
-      price: 'From $480 per person',
+      //price: 'From $480 per person',
       image: coast1Image,
     },
     {
@@ -65,7 +65,7 @@ export default function DayExcursions() {
       title: '4 Days Zanzibar Spice & Beach Holiday',
       duration: '4 Days / 3 Nights',
       highlights: 'Stone Town walking tour, spice farm visit, and Nungwi beach relaxation.',
-      price: 'From $550 per person',
+      //price: 'From $550 per person',
       image: zanzibarImage,
     }
   ];
