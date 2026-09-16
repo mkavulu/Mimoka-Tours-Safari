@@ -78,7 +78,7 @@ export default function TourDetail() {
         <div className="detail-hero-content">
           <span className="badge">{tour.region}</span>
           <h1>{tour.title}</h1>
-          <p className="price-tag">Starting from <strong>{tour.price}</strong></p>
+          <p className="price-tag"> <strong>{tour.price}</strong></p>
         </div>
       </div>
 
