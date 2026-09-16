@@ -55,8 +55,20 @@ export default function Contact() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Simple and effective sanitization helper to strip HTML tags/scripts
+  const sanitizeInput = (value) => {
+    if (typeof value !== 'string') return value;
+    return value.replace(/<[^>]*>?/gm, '').trim();
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    // Apply sanitization to text inputs as they are typed
+    const cleanedValue = (name === 'message' || name === 'fullName' || name === 'phone') 
+      ? sanitizeInput(value) 
+      : value;
+
+    setFormData({ ...formData, [name]: cleanedValue });
   };
 
   const filteredCountries = countries.filter(country => 
