@@ -1,12 +1,13 @@
 // src/components/Navbar.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import './Navbar.css';
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('EN');
+  const { currentLang, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
 
   const handleTourClick = (tourId) => {
@@ -22,9 +23,8 @@ export default function Navbar() {
   };
 
   const handleLanguageChange = (langCode) => {
-    setCurrentLang(langCode);
+    setLanguage(langCode);
     setIsMobileMenuOpen(false);
-    // Add your translation/localization logic here
   };
 
   return (
@@ -43,9 +43,9 @@ export default function Navbar() {
       </button>
 
       <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-        <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-        <li><Link to="/destinations" onClick={() => setIsMobileMenuOpen(false)}>Destinations</Link></li>
-        <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
+        <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>{t('home')}</Link></li>
+        <li><Link to="/destinations" onClick={() => setIsMobileMenuOpen(false)}>{t('destinations')}</Link></li>
+        <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>{t('about')}</Link></li>
 
         {/* Tours List Mega-Menu Dropdown */}
         <li 
@@ -57,7 +57,7 @@ export default function Navbar() {
             className="dropdown-trigger" 
             onClick={() => window.innerWidth <= 992 && setIsDropdownOpen(!isDropdownOpen)}
           >
-            Tours List ▼
+            {t('toursList')} ▼
           </span>
 
           {isDropdownOpen && (
@@ -98,15 +98,15 @@ export default function Navbar() {
               <div className="mega-menu-column excursions-column">
                 <h4>Excursions & Extensions</h4>
                 <ul>
-                  <li onClick={() => handleExcursionClick('/excursions')}> Nairobi Day Tours & Excursions</li>
-                  <li onClick={() => handleExcursionClick('/excursions')}> Coastal Beach Extensions</li>
+                  <li onClick={() => handleExcursionClick('/excursions')}>Nairobi Day Tours & Excursions</li>
+                  <li onClick={() => handleExcursionClick('/excursions')}>Coastal Beach Extensions</li>
                 </ul>
               </div>
             </div>
           )}
         </li>
 
-        <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
+        <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>{t('contactUs')}</Link></li>
 
         {/* Inline Language Switcher Buttons (EN, FR, DE) */}
         <li className="lang-switcher-item">
@@ -137,7 +137,7 @@ export default function Navbar() {
           </div>
         </li>
 
-        <li><Link to="/contact" className="nav-cta" onClick={() => setIsMobileMenuOpen(false)}>Book Safari</Link></li>
+        <li><Link to="/contact" className="nav-cta" onClick={() => setIsMobileMenuOpen(false)}>{t('bookSafari')}</Link></li>
       </ul>
     </nav>
   );

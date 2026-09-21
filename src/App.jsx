@@ -1,6 +1,6 @@
 // src/App.jsx
-//import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider, SUPPORTED_LANGUAGES } from './context/LanguageContext';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,29 +10,49 @@ import TourDetail from './pages/TourDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import DayExcursions from './components/DayExcursions';
-
-// Import the floating action widget
 import FloatingActionWidget from './components/FloatingActionWidget';
+import ExperienceDetail from './pages/ExperienceDetail';
 
 export default function App() {
+  // Core pages of your application
+  const appPages = [
+    { path: '', element: <Home /> },
+    { path: 'destinations', element: <Destinations /> },
+    { path: 'tour/:id', element: <TourDetail /> },
+    { path: 'experience/:slug', element: <ExperienceDetail /> },
+    { path: 'about', element: <About /> },
+    { path: 'contact', element: <Contact /> },
+    { path: 'excursions', element: <DayExcursions /> },
+  ];
+
   return (
     <Router>
-      <ScrollToTop /> {/* Automatically scrolls to top on every navigation click */}
-      <Navbar />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/destinations" element={<Destinations />} />
-        <Route path="/tour/:id" element={<TourDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/excursions" element={<DayExcursions />} />
-      </Routes>
-      
-      <Footer />
-
-      {/* Floating action widget placed here to appear globally across all pages */}
-      <FloatingActionWidget />
+      <LanguageProvider>
+        <ScrollToTop />
+        <Navbar />
+        
+        <Routes>
+          {/* Automatically generate routes for every language prefix (e.g., /es/destinations, /it/experience/:slug, etc.) */}
+          {SUPPORTED_LANGUAGES.map((lang) => 
+            appPages.map((page) => {
+              const routePath = lang.path === '' 
+                ? `/${page.path}` 
+                : `/${lang.path}/${page.path}`.replace(/\/$/, ''); // handles root cleanups
+              
+              return (
+                <Route 
+                  key={routePath} 
+                  path={routePath} 
+                  element={page.element} 
+                />
+              );
+            })
+          )}
+        </Routes>
+        
+        <Footer />
+        <FloatingActionWidget />
+      </LanguageProvider>
     </Router>
   );
 }

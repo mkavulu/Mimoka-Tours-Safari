@@ -1,0 +1,347 @@
+
+:root {
+  --primary-deep: #1e3f28;
+  --primary-main: #2c5e3b;
+  --primary-light: #eaf1ed;
+  --accent-gold: #d4af37;
+  --text-dark: #1a1a1a;
+  --text-muted: #666666;
+  --bg-main: #f9f9f9;
+  --bg-card: #ffffff;
+  --border-light: #eaeaea;
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Explorer Section Container & Header */
+.explorer-section {
+  padding: 80px 5%;
+  background-color: var(--bg-main);
+}
+
+.explorer-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.explorer-header h2 {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.explorer-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* 2. Country Filter Navigation Tabs */
+.country-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 22px;
+  border: 2px solid var(--primary-main);
+  background: transparent;
+  color: var(--primary-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.tab-btn:hover, 
+.tab-btn.active {
+  background: var(--primary-main);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(44, 94, 59, 0.2);
+}
+
+/* 3. Main Grid Layout */
+.explorer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* 4. Destinations List & Cards */
+.destinations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar for sleek finish */
+.destinations-list::-webkit-scrollbar {
+  width: 6px;
+}
+.destinations-list::-webkit-scrollbar-thumb {
+  background: #d1d9d3;
+  border-radius: 3px;
+}
+
+.destination-card {
+  background: var(--bg-card);
+  padding: 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-light);
+  border-left: 5px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.destination-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: #e2e8e4;
+  border-left-color: var(--accent-gold);
+}
+
+.destination-card.active {
+  border-left-color: var(--accent-gold);
+  border-color: #d1dcda;
+  background: #fdfdfd;
+  box-shadow: var(--shadow-hover);
+}
+
+.dest-country-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-main);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.destination-card h3 {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin: 6px 0 4px 0;
+}
+
+.destination-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 5. Destination Preview Panel */
+.destination-preview-panel {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--border-light);
+  border-top: 5px solid var(--primary-main);
+  position: sticky;
+  top: 30px;
+}
+
+.preview-badge {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-main);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  align-self: flex-start;
+}
+
+.preview-content h3 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.preview-tagline {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  font-style: italic;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.preview-details {
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 22px 0;
+  margin-bottom: 25px;
+}
+
+.detail-item {
+  margin-bottom: 16px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item strong {
+  display: block;
+  color: var(--text-dark);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.detail-item span {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 6. Highlights & Action Elements */
+.highlights-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlights-chips li {
+  background: var(--primary-light);
+  color: var(--primary-deep);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid #d8e4de;
+}
+
+.explore-tour-btn {
+  background: var(--primary-main);
+  color: #fff;
+  border: none;
+  padding: 14px 25px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(44, 94, 59, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.explore-tour-btn:hover {
+  background: var(--primary-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(44, 94, 59, 0.35);
+}
+
+
+/* RESPONSIVE MEDIA QUERIES  */
+
+/* Tablet View (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .explorer-section {
+    padding: 60px 4%;
+  }
+
+  .explorer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .destination-preview-panel {
+    position: static; /* Removes sticky positioning for smoother flow on tablets */
+  }
+
+  .destinations-list {
+    max-height: 420px; /* Shorter scroll window on tablets */
+  }
+}
+
+/* Mobile View (Max Width: 600px) */
+@media (max-width: 600px) {
+  .explorer-section {
+    padding: 40px 16px;
+  }
+
+  .explorer-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .explorer-header p {
+    font-size: 0.95rem;
+  }
+
+  .country-filter-tabs {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 0.83rem;
+  }
+
+  .destinations-list {
+    max-height: 380px;
+  }
+
+  .destination-card {
+    padding: 16px;
+  }
+
+  .destination-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .destination-preview-panel {
+    padding: 24px 18px;
+  }
+
+  .preview-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .preview-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .preview-details {
+    padding: 16px 0;
+    margin-bottom: 20px;
+  }
+
+  .explore-tour-btn {
+    padding: 12px 20px;
+    font-size: 0.92rem;
+  }
+}
