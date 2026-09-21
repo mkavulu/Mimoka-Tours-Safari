@@ -241,3 +241,29 @@ button, .btn-primary, .btn-secondary {
     max-width: 100% !important;
   }
 }
+/* Force absolute override for mobile screens */
+@media (max-width: 600px) {
+  .explorer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    gap: 20px !important;
+  }
+
+  .destinations-list {
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .destination-preview-panel {
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+    margin-top: 10px !important;
+    z-index: 1 !important;
+  }
+}
