@@ -42,7 +42,6 @@ const experienceDatabase = {
 
 export default function ExperienceDetail() {
   const { slug } = useParams();
-  // Fallback data if slug is missing or unrecognized
   const experience = experienceDatabase[slug] || {
     title: "Exclusive East African Wildlife Experience",
     subtitle: "Immersive nature and cultural safari adventures.",
@@ -61,17 +60,18 @@ export default function ExperienceDetail() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '900px', margin: '40px auto', padding: '0 20px' }}>
-        <Link to="/destinations" style={{ color: '#2c5e3b', fontWeight: '600', textDecoration: 'none', display: 'inline-block', marginBottom: '20px' }}>
+      <div className="experience-container">
+        <Link to="/destinations" className="back-link">
           &larr; Back to Destinations & Explorer
         </Link>
         
-        <h2 style={{ fontSize: '2rem', color: '#1a1a1a', marginBottom: '15px' }}>Experience Overview</h2>
-        <p style={{ fontSize: '1.05rem', color: '#555', lineHeight: '1.8', marginBottom: '30px' }}>{experience.description}</p>
+        <h2 className="experience-heading">Experience Overview</h2>
+        <p className="experience-desc">{experience.description}</p>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '30px' }}>
-          <img src={experience.image} alt="Experience visual 1" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }} />
-          <img src={experience.secondaryImage} alt="Experience visual 2" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }} />
+        {/* Replaced fixed 1fr 1fr inline grid with a responsive class */}
+        <div className="experience-image-grid">
+          <img src={experience.image} alt="Experience visual 1" className="exp-img" />
+          <img src={experience.secondaryImage} alt="Experience visual 2" className="exp-img" />
         </div>
       </div>
     </div>
