@@ -1,4 +1,4 @@
-
+/* ================================================================= */
 :root {
   --primary-deep: #1e3f28;
   --primary-main: #2c5e3b;
@@ -156,6 +156,7 @@
   border-top: 5px solid var(--primary-main);
   position: sticky;
   top: 30px;
+  z-index: 2;
 }
 
 .preview-badge {
@@ -263,7 +264,9 @@
 }
 
 
-/* RESPONSIVE MEDIA QUERIES  */ 
+/* ================================================================= */
+/* RESPONSIVE MEDIA QUERIES                                           */
+/* ================================================================= */
 
 /* Tablet View (Max Width: 1024px) */
 @media (max-width: 1024px) {
@@ -277,11 +280,11 @@
   }
 
   .destination-preview-panel {
-    position: static; 
+    position: static !important; 
   }
 
   .destinations-list {
-    max-height: none; /* Let list flow naturally on smaller screens so it doesn't clip */
+    max-height: none; 
     overflow-y: visible;
   }
 }
@@ -289,7 +292,7 @@
 /* Mobile View (Max Width: 600px) */
 @media (max-width: 600px) {
   .destinations-page {
-    padding-bottom: 80px; /* Adds space at the bottom so content isn't hidden behind the floating widget */
+    padding-bottom: 80px; 
   }
 
   .explorer-section {
@@ -313,13 +316,13 @@
   .explorer-grid {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
   }
 
   .destinations-list {
     max-height: none;
     overflow-y: visible;
-    gap: 10px;
+    gap: 12px;
   }
 
   .destination-card {
@@ -330,9 +333,11 @@
     font-size: 1rem;
   }
 
+  /* Force static layout flow so it never overlaps or floats over content */
   .destination-preview-panel {
     padding: 20px 16px;
-    position: static;
+    position: static !important;
+    top: auto !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
 
