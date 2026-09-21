@@ -88,7 +88,6 @@
   padding-right: 4px;
 }
 
-/* Custom scrollbar for sleek finish */
 .destinations-list::-webkit-scrollbar {
   width: 6px;
 }
@@ -264,7 +263,7 @@
 }
 
 
-/* RESPONSIVE MEDIA QUERIES  */
+/* RESPONSIVE MEDIA QUERIES  */ 
 
 /* Tablet View (Max Width: 1024px) */
 @media (max-width: 1024px) {
@@ -274,74 +273,75 @@
 
   .explorer-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 30px;
   }
 
   .destination-preview-panel {
-    position: static; /* Removes sticky positioning for smoother flow on tablets */
+    position: static; 
   }
 
   .destinations-list {
-    max-height: 420px; /* Shorter scroll window on tablets */
+    max-height: none; /* Let list flow naturally on smaller screens so it doesn't clip */
+    overflow-y: visible;
   }
 }
 
 /* Mobile View (Max Width: 600px) */
 @media (max-width: 600px) {
+  .destinations-page {
+    padding-bottom: 80px; /* Adds space at the bottom so content isn't hidden behind the floating widget */
+  }
+
   .explorer-section {
-    padding: 40px 16px;
+    padding: 30px 12px;
   }
 
   .explorer-header h2 {
-    font-size: 1.75rem;
-  }
-
-  .explorer-header p {
-    font-size: 0.95rem;
+    font-size: 1.6rem;
   }
 
   .country-filter-tabs {
-    gap: 8px;
-    margin-top: 20px;
+    gap: 6px;
+    margin-top: 16px;
   }
 
   .tab-btn {
-    padding: 8px 16px;
-    font-size: 0.83rem;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .explorer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .destinations-list {
-    max-height: 380px;
+    max-height: none;
+    overflow-y: visible;
+    gap: 10px;
   }
 
   .destination-card {
-    padding: 16px;
+    padding: 14px;
   }
 
   .destination-card h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .destination-preview-panel {
-    padding: 24px 18px;
+    padding: 20px 16px;
+    position: static;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
 
   .preview-content h3 {
-    font-size: 1.45rem;
-  }
-
-  .preview-tagline {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
-  .preview-details {
-    padding: 16px 0;
-    margin-bottom: 20px;
+    font-size: 1.35rem;
   }
 
   .explore-tour-btn {
-    padding: 12px 20px;
-    font-size: 0.92rem;
+    padding: 12px 16px;
+    font-size: 0.9rem;
   }
 }
