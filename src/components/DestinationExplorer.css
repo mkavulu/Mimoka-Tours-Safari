@@ -1,4 +1,4 @@
-/* ================================================================= */
+
 :root {
   --primary-deep: #1e3f28;
   --primary-main: #2c5e3b;
@@ -264,28 +264,35 @@
 }
 
 
-/* ================================================================= */
-/* RESPONSIVE MEDIA QUERIES                                           */
-/* ================================================================= */
+/* RESPONSIVE MEDIA QUERIES & MOBILE OVERRIDES */
 
-/* Tablet View (Max Width: 1024px) */
+/* Tablet & Smaller Screens (Max Width: 1024px) */
 @media (max-width: 1024px) {
   .explorer-section {
     padding: 60px 4%;
   }
 
   .explorer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .destination-preview-panel {
-    position: static !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
   }
 
   .destinations-list {
-    max-height: none; 
-    overflow-y: visible;
+    max-height: none !important;
+    overflow-y: visible !important;
+    width: 100% !important;
+  }
+
+  .destination-preview-panel {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    z-index: 1 !important;
   }
 }
 
@@ -313,18 +320,6 @@
     font-size: 0.8rem;
   }
 
-  .explorer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .destinations-list {
-    max-height: none;
-    overflow-y: visible;
-    gap: 12px;
-  }
-
   .destination-card {
     padding: 14px;
   }
@@ -333,12 +328,9 @@
     font-size: 1rem;
   }
 
-  /* Force static layout flow so it never overlaps or floats over content */
   .destination-preview-panel {
     padding: 20px 16px;
-    position: static !important;
-    top: auto !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .preview-content h3 {
