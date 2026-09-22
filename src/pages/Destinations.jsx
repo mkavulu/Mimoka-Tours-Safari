@@ -13,9 +13,9 @@ import elephantImg from '../assets/elephant.jpeg';
 import camp1Img from '../assets/camp1.jpg';
 import camp2Img from '../assets/camp2.jpeg';
 
-// Import Destination Explorer Data & Component
+// Import Destination Explorer Data & Component Styles
 import { destinationsData } from '../data/destinationsData';
-import '../components/DestinationExplorer.css'; // or keep style unified
+import '../components/DestinationExplorer.css';
 
 export default function Destinations() {
   const navigate = useNavigate();
@@ -255,26 +255,17 @@ export default function Destinations() {
       </div>
 
       {/* Phase 2: Interactive Destination Explorer Section */}
-      <section className="explorer-section" style={{ padding: '60px 5%', background: '#f9f9f9' }}>
-        <div className="explorer-header" style={{ textAlign: 'center', marginBottom: '30px' }}>
+      <section className="explorer-section">
+        <div className="explorer-header">
           <h2>Explore Iconic East African Parks</h2>
           <p>Select a region to preview key wildlife highlights and best visiting seasons.</p>
           
-          <div className="country-filter-tabs" style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px', flexWrap: 'wrap' }}>
+          <div className="country-filter-tabs">
             {countries.map(country => (
               <button
                 key={country}
                 className={selectedCountry === country ? 'tab-btn active' : 'tab-btn'}
                 onClick={() => setSelectedCountry(country)}
-                style={{
-                  padding: '8px 18px',
-                  borderRadius: '20px',
-                  border: '2px solid #2c5e3b',
-                  background: selectedCountry === country ? '#2c5e3b' : 'transparent',
-                  color: selectedCountry === country ? '#fff' : '#2c5e3b',
-                  fontWeight: '600',
-                  cursor: 'pointer'
-                }}
               >
                 {country}
               </button>
@@ -282,67 +273,55 @@ export default function Destinations() {
           </div>
         </div>
 
-        <div className="explorer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="destinations-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <div className="explorer-grid">
+          <div className="destinations-list">
             {filteredDestinations.map(dest => (
               <div 
                 key={dest.id} 
                 className={`destination-card ${activeDestination.id === dest.id ? 'active' : ''}`}
                 onClick={() => setActiveDestination(dest)}
-                style={{
-                  background: '#fff',
-                  padding: '18px',
-                  borderRadius: '10px',
-                  cursor: 'pointer',
-                  borderLeft: activeDestination.id === dest.id ? '5px solid #d4af37' : '5px solid transparent',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
-                }}
               >
-                <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#2c5e3b', textTransform: 'uppercase' }}>{dest.country}</span>
-                <h3 style={{ margin: '4px 0', fontSize: '1.1rem', color: '#222' }}>{dest.name}</h3>
-                <p style={{ margin: 0, fontSize: '0.85rem', color: '#666' }}>{dest.tagline}</p>
+                <span className="dest-country-tag">{dest.country}</span>
+                <h3>{dest.name}</h3>
+                <p>{dest.tagline}</p>
               </div>
             ))}
           </div>
 
-          <div className="destination-preview-panel" style={{ background: '#fff', padding: '30px', borderRadius: '12px', boxShadow: '0 6px 20px rgba(0,0,0,0.06)', borderTop: '4px solid #2c5e3b' }}>
-            <span style={{ background: '#eaf1ed', color: '#2c5e3b', padding: '4px 10px', borderRadius: '15px', fontSize: '0.75rem', fontWeight: '600', display: 'inline-block', marginBottom: '10px' }}>Featured Sanctuary</span>
-            <h3 style={{ fontSize: '1.6rem', color: '#1a1a1a', margin: '0 0 5px 0' }}>{activeDestination.name}</h3>
-            <p style={{ color: '#555', fontStyle: 'italic', marginBottom: '20px' }}>{activeDestination.tagline}</p>
-            
-            <div style={{ borderTop: '1px solid #eee', borderBottom: '1px solid #eee', padding: '15px 0', marginBottom: '20px' }}>
-              <p style={{ margin: '0 0 10px 0', fontSize: '0.9rem' }}><strong>Best Time to Visit:</strong> {activeDestination.bestTime}</p>
-              <p style={{ margin: '0 0 8px 0', fontSize: '0.9rem' }}><strong>Wildlife & Highlights:</strong> <span style={{ fontSize: '0.8rem', color: '#666' }}>(Click to explore experience)</span></p>
+          <div className="destination-preview-panel">
+            <span className="preview-badge">Featured Sanctuary</span>
+            <div className="preview-content">
+              <h3>{activeDestination.name}</h3>
+              <p className="preview-tagline">{activeDestination.tagline}</p>
               
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '6px' }}>
-                {activeDestination.highlights.map((h, idx) => (
-                  <Link 
-                    key={idx} 
-                    to={`/experience/${h.slug}`}
-                    style={{ 
-                      background: '#f4f6f4', 
-                      color: '#2c5e3b', 
-                      padding: '5px 12px', 
-                      borderRadius: '6px', 
-                      fontSize: '0.8rem', 
-                      fontWeight: '600',
-                      textDecoration: 'none',
-                      border: '1px solid #d8e4de',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    {h.name} &rarr;
-                  </Link>
-                ))}
+              <div className="preview-details">
+                <div className="detail-item">
+                  <strong>Best Time to Visit:</strong>
+                  <span>{activeDestination.bestTime}</span>
+                </div>
+                <div className="detail-item">
+                  <strong>Wildlife & Highlights:</strong>
+                  <span>(Click to explore experience)</span>
+                </div>
+                
+                <ul className="highlights-chips">
+                  {activeDestination.highlights.map((h, idx) => (
+                    <li key={idx}>
+                      <Link to={`/experience/${h.slug}`}>
+                        {h.name} &rarr;
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
 
-            <button 
-              onClick={() => navigate(`/tour/${activeDestination.tourId}`)}
-              style={{ background: '#2c5e3b', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: '6px', fontWeight: '600', cursor: 'pointer', width: '100%' }}
-            >
-              View Associated Tours &rarr;
-            </button>
+              <button 
+                className="explore-tour-btn"
+                onClick={() => navigate(`/tour/${activeDestination.tourId}`)}
+              >
+                View Associated Tours &rarr;
+              </button>
+            </div>
           </div>
         </div>
       </section>
