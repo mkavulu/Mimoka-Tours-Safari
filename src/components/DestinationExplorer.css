@@ -1,3 +1,6 @@
+/* ==========================================
+   Destination Explorer Component Styles
+   ========================================== */
 
 :root {
   --primary-deep: #1e3f28;
@@ -14,7 +17,6 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 1. Explorer Section Container & Header */
 .explorer-section {
   padding: 80px 5%;
   background-color: var(--bg-main);
@@ -40,7 +42,7 @@
   line-height: 1.5;
 }
 
-/* 2. Country Filter Navigation Tabs */
+/* Country Filter Navigation Tabs */
 .country-filter-tabs {
   display: flex;
   justify-content: center;
@@ -68,7 +70,7 @@
   box-shadow: 0 4px 10px rgba(44, 94, 59, 0.2);
 }
 
-/* 3. Main Grid Layout */
+/* Main Grid Layout */
 .explorer-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -78,7 +80,7 @@
   align-items: start;
 }
 
-/* 4. Destinations List & Cards */
+/* Destinations List & Cards */
 .destinations-list {
   display: flex;
   flex-direction: column;
@@ -105,6 +107,7 @@
   border: 1px solid var(--border-light);
   border-left: 5px solid transparent;
   transition: var(--transition-smooth);
+  position: relative;
 }
 
 .destination-card:hover {
@@ -143,10 +146,10 @@
   line-height: 1.4;
 }
 
-/* 5. Destination Preview Panel */
+/* Destination Preview Panel */
 .destination-preview-panel {
   background: var(--bg-card);
-  padding: 40px;
+  padding: 35px;
   border-radius: 16px;
   box-shadow: var(--shadow-hover);
   display: flex;
@@ -185,23 +188,24 @@
   color: var(--text-muted);
   font-size: 0.98rem;
   font-style: italic;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .preview-details {
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
-  padding: 22px 0;
+  padding: 20px 0;
   margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .detail-item {
-  margin-bottom: 16px;
-}
-
-.detail-item:last-child {
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .detail-item strong {
@@ -210,7 +214,6 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  margin-bottom: 6px;
 }
 
 .detail-item span {
@@ -219,17 +222,18 @@
   line-height: 1.5;
 }
 
-/* 6. Highlights & Action Elements */
+/* Highlights Chips List */
 .highlights-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 8px 0 0 0;
 }
 
-.highlights-chips li {
+.highlights-chips li a {
+  display: inline-block;
   background: var(--primary-light);
   color: var(--primary-deep);
   padding: 6px 14px;
@@ -237,6 +241,14 @@
   font-size: 0.82rem;
   font-weight: 600;
   border: 1px solid #d8e4de;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.highlights-chips li a:hover {
+  background: var(--primary-main);
+  color: #fff;
+  border-color: var(--primary-main);
 }
 
 .explore-tour-btn {
@@ -255,6 +267,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  text-align: center;
 }
 
 .explore-tour-btn:hover {
@@ -264,7 +277,9 @@
 }
 
 
-/* RESPONSIVE MEDIA QUERIES & MOBILE OVERRIDES */
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES & MOBILE BREAKPOINTS
+   ========================================== */
 
 /* Tablet & Smaller Screens (Max Width: 1024px) */
 @media (max-width: 1024px) {
