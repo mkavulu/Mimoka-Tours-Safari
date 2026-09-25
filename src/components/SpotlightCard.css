@@ -1,9 +1,10 @@
+/* src/components/SpotlightCard.css */
 .spotlight-card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  background: var(--white);
-  border: 1px solid var(--border-color);
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border-color, #eaeaea);
 }
 
 .spotlight-overlay {

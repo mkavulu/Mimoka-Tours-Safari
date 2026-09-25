@@ -2,7 +2,6 @@
 
 /* Professional Light Cream Hero Section */
 .detail-hero {
-  /* Soft, professional light cream luxury safari gradient */
   background: linear-gradient(135deg, #fdfbf7 0%, #f4ebd0 100%);
   padding: 80px 10% 70px 10%;
   color: var(--primary-color, #1b4332);
@@ -12,7 +11,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-/* Subtle background texture pattern */
 .detail-hero::before {
   content: '';
   position: absolute;
@@ -51,7 +49,7 @@
   font-weight: 700;
   color: var(--primary-color, #1b4332);
   line-height: 1.2;
-  margin-bottom: 0; /* Adjusted since price-tag below it was removed */
+  margin-bottom: 0;
 }
 
 /* DETAIL BODY & CONTENT LAYOUT */
@@ -137,20 +135,49 @@
   line-height: 1.5;
 }
 
-.btn-book {
-  display: block;
-  background-color: var(--accent-color, #c86d33);
-  color: var(--white, #ffffff);
-  text-align: center;
-  padding: 12px;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease;
+/* Tour Detail / Card Action Buttons (Clean & Equal-Width Side-by-Side) */
+.tour-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  align-items: center;
+  width: 100%;
 }
 
-.btn-book:hover {
-  background-color: #b05c26;
+.tour-actions .btn-details,
+.tour-actions .btn-book {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.tour-actions .btn-details {
+  background-color: #1e293b;
+  color: #ffffff;
+  border: 1px solid #1e293b;
+}
+
+.tour-actions .btn-details:hover {
+  background-color: #0f172a;
+}
+
+.tour-actions .btn-book {
+  background-color: var(--primary-color, #1b4332);
+  color: #ffffff;
+  border: none;
+}
+
+.tour-actions .btn-book:hover {
+  background-color: #143224;
 }
 
 /* RESPONSIVE: TABLET & MOBILE VIEWS */
@@ -164,5 +191,17 @@
   }
   .detail-hero-content h1 {
     font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tour-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .tour-actions .btn-details,
+  .tour-actions .btn-book {
+    width: 100%;
   }
 }

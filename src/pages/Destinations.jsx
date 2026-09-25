@@ -1,5 +1,5 @@
 // src/pages/Destinations.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Destinations.css';
 
@@ -34,6 +34,7 @@ export default function Destinations() {
       id: 1, 
       title: "8 Days Kenya & Tanzania Migration Safari", 
       region: "Kenya & Tanzania", 
+      //price: "$2,500",
       image: kenyaImg,
       itinerary: [
         "Day 1: Arrival in Nairobi - Transfer to hotel for briefing.",
@@ -50,6 +51,7 @@ export default function Destinations() {
       id: 2, 
       title: "7 Days Uganda Primate & Wildlife Discovery", 
       region: "Uganda", 
+      //price: "$2,200",
       image: ugandaImg,
       itinerary: [
         "Day 1: Arrival at Entebbe International Airport - Transfer to Kampala.",
@@ -65,6 +67,7 @@ export default function Destinations() {
       id: 3, 
       title: "5 Days Rwanda Gorilla Trekking & Culture", 
       region: "Rwanda", 
+      //price: "$2,400",
       image: rwandaImg,
       itinerary: [
         "Day 1: Arrival in Kigali - City tour including the Genocide Memorial Centre.",
@@ -78,6 +81,7 @@ export default function Destinations() {
       id: 4, 
       title: "10 Days Complete East Africa Grand Tour", 
       region: "Multi-Country", 
+      //price: "$4,100",
       image: tanzaniaImg,
       itinerary: [
         "Day 1: Arrival in Nairobi, Kenya.",
@@ -96,6 +100,7 @@ export default function Destinations() {
       id: 5, 
       title: "6 Days Classic Kenya Wildlife Safari", 
       region: "Kenya", 
+      //price: "$1,850",
       image: lionImg,
       itinerary: [
         "Day 1: Nairobi to Amboseli National Park - View of Mt. Kilimanjaro.",
@@ -110,6 +115,7 @@ export default function Destinations() {
       id: 6, 
       title: "5 Days Tanzania Northern Circuit Express", 
       region: "Tanzania", 
+      //price: "$1,950",
       image: elephantImg,
       itinerary: [
         "Day 1: Arusha to Tarangire National Park - Giant baobab trees and elephants.",
@@ -123,6 +129,7 @@ export default function Destinations() {
       id: 7, 
       title: "4 Days Queen Elizabeth & Bwindi Gorillas", 
       region: "Uganda", 
+      //price: "$1,650",
       image: camp1Img,
       itinerary: [
         "Day 1: Entebbe to Queen Elizabeth National Park.",
@@ -135,6 +142,7 @@ export default function Destinations() {
       id: 8, 
       title: "4 Days Akagera & Volcanoes Rwanda Adventure", 
       region: "Rwanda", 
+      //price: "$1,750",
       image: camp2Img,
       itinerary: [
         "Day 1: Kigali to Akagera National Park - Afternoon boat safari on Lake Ihema.",
@@ -147,6 +155,7 @@ export default function Destinations() {
       id: 9, 
       title: "9 Days Ultimate Kenya Scenic & Photographic Safari", 
       region: "Kenya", 
+      //price: "$3,100",
       image: kenyaImg,
       itinerary: [
         "Day 1: Nairobi arrival and overnight hotel stay.",
@@ -164,6 +173,7 @@ export default function Destinations() {
       id: 10, 
       title: "8 Days Tanzania Migration & Zanzibar Beach Holiday", 
       region: "Tanzania", 
+      //price: "$2,800",
       image: tanzaniaImg,
       itinerary: [
         "Day 1: Arusha to Lake Manyara National Park.",
@@ -180,6 +190,7 @@ export default function Destinations() {
       id: 11, 
       title: "6 Days Uganda Source of the Nile & Wildlife", 
       region: "Uganda", 
+      //price: "$1,900",
       image: ugandaImg,
       itinerary: [
         "Day 1: Arrival in Entebbe - Jinja source of the Nile tour.",
@@ -194,6 +205,7 @@ export default function Destinations() {
       id: 12, 
       title: "3 Days Rwanda Express Gorilla Trek", 
       region: "Rwanda", 
+     // price: "$1,500",
       image: rwandaImg,
       itinerary: [
         "Day 1: Arrival in Kigali International Airport - Scenic drive to Volcanoes National Park.",
@@ -205,6 +217,7 @@ export default function Destinations() {
       id: 13, 
       title: "4 Days Samburu Special Wildlife Explorer", 
       region: "Kenya", 
+      //price: "$1,400",
       image: lionImg,
       itinerary: [
         "Day 1: Nairobi to Samburu National Reserve - Scenic drive north across the equator with afternoon game drive.",
@@ -217,6 +230,7 @@ export default function Destinations() {
       id: 14, 
       title: "5 Days Tsavo East & West Wilderness Adventure", 
       region: "Kenya", 
+      //price: "$1,600",
       image: elephantImg,
       itinerary: [
         "Day 1: Nairobi to Tsavo East National Park - Famous for the vast red elephants and Yatta Plateau.",
@@ -230,6 +244,7 @@ export default function Destinations() {
       id: 15, 
       title: "7 Days Ultimate Kenya Northern & Southern Circuit (Samburu & Tsavo)", 
       region: "Kenya", 
+      //price: "$2,300",
       image: kenyaImg,
       itinerary: [
         "Day 1: Arrival in Nairobi - Hotel check-in and safari briefing.",
@@ -335,7 +350,17 @@ export default function Destinations() {
               <div className="tour-info">
                 <span className="tour-region">{tour.region}</span>
                 <h3>{tour.title}</h3>
-                <Link to={`/tour/${tour.id}`} className="btn-details">View Itinerary</Link>
+                <div className="tour-price">From <strong>{tour.price}</strong></div>
+                
+                <div className="tour-actions">
+                  <Link to={`/tour/${tour.id}`} className="btn-details">View Itinerary</Link>
+                  <button 
+                    className="btn-book" 
+                    onClick={() => navigate('/booking', { state: { selectedPackage: tour.title } })}
+                  >
+                    Book Now
+                  </button>
+                </div>
               </div>
             </div>
           ))}

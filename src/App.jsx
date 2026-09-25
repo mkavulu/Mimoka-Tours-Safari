@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import DayExcursions from './components/DayExcursions';
 import FloatingActionWidget from './components/FloatingActionWidget';
 import ExperienceDetail from './pages/ExperienceDetail';
+import BookingInquiry from './pages/BookingInquiry'; // 1. Import your BookingInquiry page
 
 export default function App() {
   // Core pages of your application
@@ -23,6 +24,7 @@ export default function App() {
     { path: 'about', element: <About /> },
     { path: 'contact', element: <Contact /> },
     { path: 'excursions', element: <DayExcursions /> },
+    { path: 'booking', element: <BookingInquiry /> }, // 2. Add booking route here
   ];
 
   return (
@@ -32,7 +34,7 @@ export default function App() {
         <Navbar />
         
         <Routes>
-          {/* Automatically generate routes for every language prefix (e.g., /es/destinations, /it/experience/:slug, etc.) */}
+          {/* Automatically generate routes for every language prefix (e.g., /es/destinations, /fr/booking, etc.) */}
           {SUPPORTED_LANGUAGES.map((lang) => 
             appPages.map((page) => {
               const routePath = lang.path === '' 
