@@ -1,52 +1,120 @@
 /* src/pages/Contact.css */
+
+.contact-page {
+  padding: 3rem 0 5rem 0;
+  background-color: var(--bg-light, #fbf9f5);
+  min-height: 100vh;
+}
+
 .contact-container {
-  padding: 60px 10%;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
 .contact-form {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 8px;
+  background: var(--white, #ffffff);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
   width: 100%;
-  max-width: 600px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2ddd3;
+}
+
+/* Two-column layout rows */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
-  display: block;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  color: var(--primary-color, #1b4332);
+  letter-spacing: 0.2px;
 }
 
-.form-group input, .form-group select, .form-group textarea {
+/* Base Input Styles */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: var(--font-body);
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #dcd7cd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main, #2b2b2b);
+  background-color: #fcfbf9;
+  transition: all 0.25s ease;
+  outline: none;
+  box-sizing: border-box;
 }
 
+/* Styling custom dropdown select arrow */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%202b2b2b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--secondary-color, #d4a373);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Button Styling */
 .btn-submit {
   width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--white);
-  padding: 14px;
+  background-color: var(--secondary-color, #d4a373);
+  color: #1b4332;
+  padding: 1rem 1.5rem;
   border: none;
-  border-radius: 4px;
-  font-weight: 600;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3);
 }
 
 .btn-submit:hover {
-  background-color: #a8842e;
+  background-color: #c29263;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 163, 115, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
 }
 
 /* ==========================================
@@ -64,10 +132,10 @@
 }
 
 .country-select-btn {
-  padding: 12px;
-  border: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #dcd7cd;
   border-radius: 6px;
-  background-color: #fdfdfd;
+  background-color: #fcfbf9;
   font-size: 0.9rem;
   display: flex;
   justify-content: space-between;
@@ -76,96 +144,140 @@
   user-select: none;
   height: 46px;
   box-sizing: border-box;
+  transition: border-color 0.25s ease;
 }
 
 .country-select-btn:hover {
   border-color: var(--secondary-color, #d4a373);
+  background-color: #ffffff;
+}
+
+.country-select-btn .selected-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .dropdown-arrow {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: #6c757d;
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.country-select-btn.open .dropdown-arrow {
+  transform: rotate(180deg);
 }
 
 .country-dropdown-menu {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   left: 0;
-  width: 260px;
+  width: 280px;
   background: #ffffff;
-  border: 1px solid #ced4da;
-  border-radius: 6px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  z-index: 99;
+  border: 1px solid #dcd7cd;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  z-index: 999;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .country-search-box {
-  padding: 10px;
+  padding: 8px 10px;
+  background-color: #fbfbfb;
   border-bottom: 1px solid #e9ecef;
 }
 
 .country-search-box input {
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.country-search-box input:focus {
-  border-color: var(--secondary-color, #d4a373);
+  padding: 8px 10px !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  background-color: #ffffff !important;
 }
 
 .country-list {
-  max-height: 200px;
+  max-height: 220px;
   overflow-y: auto;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Custom Scrollbar for dropdown */
+.country-list::-webkit-scrollbar {
+  width: 6px;
+}
+.country-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.country-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
 .country-item {
   padding: 10px 14px;
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
+  align-items: center;
+  font-size: 0.88rem;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s ease;
 }
 
-.country-item:hover, .country-item.active {
-  background-color: #f1f3f5;
+.country-item:hover,
+.country-item.active {
+  background-color: #f4f0e8;
   color: var(--primary-color, #1b4332);
-  font-weight: 500;
+}
+
+.country-item.active {
+  font-weight: 600;
 }
 
 .c-code {
   color: #6c757d;
+  font-weight: 500;
+  font-size: 0.82rem;
 }
 
 .no-country {
-  padding: 12px;
+  padding: 15px;
   text-align: center;
   color: #6c757d;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
-/* Make the phone text input fill the remaining space */
 .phone-input-wrapper input[type="tel"] {
   flex-grow: 1;
   height: 46px;
-  box-sizing: border-box;
 }
 
-/* Responsive adjustments */
+.required-star {
+  color: #e63946;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
+  .contact-form {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
   .phone-input-wrapper {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .country-dropdown-container {
@@ -175,11 +287,28 @@
   .country-dropdown-menu {
     width: 100%;
   }
+
+  .country-select-btn .selected-text {
+    max-width: 100%;
+  }
+}
+.page-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  padding: 2rem 1rem 0 1rem;
 }
 
-/* Required Star Styling */
-.required-star {
-  color: #e63946;
-  font-weight: bold;
-  margin-left: 3px;
+.page-header h2 {
+  color: var(--primary-color, #1b4332);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+}
+
+.page-header p {
+  color: var(--text-muted, #666666);
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
